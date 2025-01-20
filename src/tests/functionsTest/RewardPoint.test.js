@@ -6,7 +6,7 @@ describe('RewardPoint function', () => {
   
   test('should calculate rewards points correctly when totalPrice > 100', () => {
     const result = RewardPoint(599.99);
-    // (599.99 - 100) * 2 + 50 = 499.99*2 + 50 = 1049.98
+    // (599.99 - 100) * 2 + 50 = 499.99*2 + 50 = 1049
     expect(result).toBe(1049);
   });
 
@@ -45,6 +45,5 @@ describe('RewardPoint function', () => {
     // (1000 - 100) * 2 + 50 = 900 * 2 + 50 = 1850
     expect(result).toBe(1850);
   });
-
 });
 
