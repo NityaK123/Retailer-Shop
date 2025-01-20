@@ -1,6 +1,7 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
 import { RewardPoint } from '../utils/rewardPoints'
+jest.mock('../utils/rewardPoints'); // Mocking the RewardPoint utility
 
 const RetailerShop = ({ data }) => {
 
