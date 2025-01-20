@@ -1,6 +1,5 @@
 export const LastThreeMonthData = (data) => {
     const today = new Date();
-
     // Get the date for 3 months ago
     const threeMonthsAgo = new Date(today);
     threeMonthsAgo.setMonth(today.getMonth() - 3);
