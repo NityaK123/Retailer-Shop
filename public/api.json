@@ -1,0 +1,211 @@
+[
+    {
+      "transactionId": 101,
+      "customerId": 1000,
+      "customerName": "John Doe",
+      "purchaseDate": "2025-01-05",
+      "productPurchased": "Smartphone",
+      "price": 599.99
+    },
+    {
+      "transactionId": 102,
+      "customerId": 1000,
+      "customerName": "John Doe",
+      "purchaseDate": "2025-01-20",
+      "productPurchased": "Laptop",
+      "price": 1200.00
+    },
+    {
+      "transactionId": 103,
+      "customerId": 1000,
+      "customerName": "John Doe",
+      "purchaseDate": "2025-02-10",
+      "productPurchased": "Tablet",
+      "price": 299.99
+    },
+    {
+      "transactionId": 104,
+      "customerId": 1001,
+      "customerName": "Jane Smith",
+      "purchaseDate": "2025-01-11",
+      "productPurchased": "Headphones",
+      "price": 150.00
+    },
+    {
+      "transactionId": 105,
+      "customerId": 1001,
+      "customerName": "Jane Smith",
+      "purchaseDate": "2025-02-18",
+      "productPurchased": "Camera",
+      "price": 450.00
+    },
+    {
+      "transactionId": 106,
+      "customerId": 1002,
+      "customerName": "Alice Brown",
+      "purchaseDate": "2025-01-12",
+      "productPurchased": "Smartwatch",
+      "price": 250.00
+    },
+    {
+      "transactionId": 107,
+      "customerId": 1002,
+      "customerName": "Alice Brown",
+      "purchaseDate": "2025-02-05",
+      "productPurchased": "Printer",
+      "price": 120.00
+    },
+    {
+      "transactionId": 108,
+      "customerId": 1003,
+      "customerName": "Bob White",
+      "purchaseDate": "2025-01-07",
+      "productPurchased": "Keyboard",
+      "price": 80.00
+    },
+    {
+      "transactionId": 109,
+      "customerId": 1003,
+      "customerName": "Bob White",
+      "purchaseDate": "2025-02-22",
+      "productPurchased": "Mouse",
+      "price": 30.00
+    },
+    {
+      "transactionId": 110,
+      "customerId": 1004,
+      "customerName": "Sam White",
+      "purchaseDate": "2025-02-22",
+      "productPurchased": "Mouse",
+      "price": 30.00
+    },
+    {
+      "transactionId": 111,
+      "customerId": 1004,
+      "customerName": "Sam White",
+      "purchaseDate": "2025-02-22",
+      "productPurchased": "Mouse",
+      "price": 30.00
+    },
+    {
+      "transactionId": 112,
+      "customerId": 1000,
+      "customerName": "John Doe",
+      "purchaseDate": "2025-03-05",
+      "productPurchased": "Smartwatch",
+      "price": 199.99
+    },
+    {
+      "transactionId": 113,
+      "customerId": 1001,
+      "customerName": "Jane Smith",
+      "purchaseDate": "2025-03-15",
+      "productPurchased": "Headphones",
+      "price": 120.00
+    },
+    {
+      "transactionId": 114,
+      "customerId": 1002,
+      "customerName": "Alice Brown",
+      "purchaseDate": "2025-03-20",
+      "productPurchased": "Printer",
+      "price": 130.00
+    },
+    {
+      "transactionId": 115,
+      "customerId": 1003,
+      "customerName": "Bob White",
+      "purchaseDate": "2025-03-25",
+      "productPurchased": "Laptop",
+      "price": 900.00
+    },
+    {
+      "transactionId": 116,
+      "customerId": 1004,
+      "customerName": "Sam White",
+      "purchaseDate": "2025-03-30",
+      "productPurchased": "Smartphone",
+      "price": 599.99
+    },
+    {
+      "transactionId": 117,
+      "customerId": 1000,
+      "customerName": "John Doe",
+      "purchaseDate": "2025-04-02",
+      "productPurchased": "Laptop",
+      "price": 1200.00
+    },
+    {
+      "transactionId": 118,
+      "customerId": 1001,
+      "customerName": "Jane Smith",
+      "purchaseDate": "2025-04-12",
+      "productPurchased": "Camera",
+      "price": 500.00
+    },
+    {
+      "transactionId": 119,
+      "customerId": 1002,
+      "customerName": "Alice Brown",
+      "purchaseDate": "2025-04-18",
+      "productPurchased": "Tablet",
+      "price": 350.00
+    },
+    {
+      "transactionId": 120,
+      "customerId": 1003,
+      "customerName": "Bob White",
+      "purchaseDate": "2025-04-25",
+      "productPurchased": "Monitor",
+      "price": 300.00
+    },
+    {
+      "transactionId": 121,
+      "customerId": 1004,
+      "customerName": "Sam White",
+      "purchaseDate": "2025-04-28",
+      "productPurchased": "Smartwatch",
+      "price": 250.00
+    },
+    {
+      "transactionId": 122,
+      "customerId": 1000,
+      "customerName": "John Doe",
+      "purchaseDate": "2025-05-01",
+      "productPurchased": "Tablet",
+      "price": 299.99
+    },
+    {
+      "transactionId": 123,
+      "customerId": 1001,
+      "customerName": "Jane Smith",
+      "purchaseDate": "2025-05-05",
+      "productPurchased": "Smartwatch",
+      "price": 199.99
+    },
+    {
+      "transactionId": 124,
+      "customerId": 1002,
+      "customerName": "Alice Brown",
+      "purchaseDate": "2025-05-10",
+      "productPurchased": "Keyboard",
+      "price": 90.00
+    },
+    {
+      "transactionId": 125,
+      "customerId": 1003,
+      "customerName": "Bob White",
+      "purchaseDate": "2025-05-15",
+      "productPurchased": "Mouse",
+      "price": 30.00
+    },
+    {
+      "transactionId": 126,
+      "customerId": 1004,
+      "customerName": "Sam White",
+      "purchaseDate": "2025-05-20",
+      "productPurchased": "Laptop",
+      "price": 1100.00
+    }
+  ]
+  
