@@ -21,7 +21,7 @@ const TransactionDetails = ({ data }) => {
         </thead>
         <tbody>
           {data.map((val, index) => {
-            let rewardsPoint = RewardPoint(Math.floor(val.totalPrice));
+            let rewardsPoint = RewardPoint(Math.floor(val.price));
             return (
               <tr key={index}>
                 <td>{index + 1}</td>

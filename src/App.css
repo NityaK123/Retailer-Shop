@@ -7,3 +7,7 @@
   height: auto;
   margin: auto;
 }
+
+#table tr td{
+  text-align: right;
+}
