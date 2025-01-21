@@ -33,6 +33,14 @@ src/
 |--pages/
 |   |--Home.jsx
 |
+|--tests
+|   |--componentsTest
+|        |--MonthlyReward.test.js
+|        |--TotalReward.test.js
+|        |--Transaction.test.js
+|   |--functionsTest
+|        |--RewardPoint.test.js
+|
 |-- utils/
 |   |--rewardPoints.js 
 |
