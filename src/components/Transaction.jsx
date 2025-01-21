@@ -1,6 +1,7 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
 import { RewardPoint } from "../utils/rewardPoints";
+import PropTypes from 'prop-types'
 
 const TransactionDetails = ({ data }) => {
   return (
@@ -38,5 +39,9 @@ const TransactionDetails = ({ data }) => {
     </div>
   );
 };
+
+TransactionDetails.propTypes = {
+  data : PropTypes.array
+}
 
 export default TransactionDetails;
