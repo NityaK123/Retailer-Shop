@@ -1,6 +1,5 @@
-import { fetchData } from './fetchData';
-import logger from '../logger';
-
+import { fetchData } from "./fetchData";
+import logger from "../logger";
 
 async function processTotalRewards() {
   try {

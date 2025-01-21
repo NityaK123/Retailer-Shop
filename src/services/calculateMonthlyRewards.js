@@ -1,6 +1,6 @@
-import { fetchData } from './fetchData';
-import { monthNames } from '../constant/monthNames';
-import logger from '../logger';
+import { fetchData } from "./fetchData";
+import { monthNames } from "../constant/monthNames";
+import logger from "../logger";
 
 async function processData() {
   try {
@@ -36,4 +36,4 @@ async function processData() {
   }
 }
 
-export default processData; 
+export default processData;
