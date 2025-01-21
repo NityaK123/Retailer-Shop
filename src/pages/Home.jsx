@@ -1,108 +1,53 @@
 import React, { useState, useEffect } from "react";
-import RetailerShop from "../components/MonthlyReward";
+import MonthlyReward from "../components/MonthlyReward";
 import TransactionDetails from "../components/Transaction";
 import TotalReward from "../components/TotalReward";
-import { LastThreeMonthData } from "../utils/latestThreeMonthData";
-
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+import { calculateLastThreeMonthData } from "../utils/latestThreeMonthData";
+import { fetchData } from "../services/fetchData";
+import processData from '../services/calculateMonthlyRewards'
+import processTotalRewards from '../services/calculateTotalRewards'
 
 function Home() {
-  const [rewardsData, setRewardsData] = useState([]);
-  const [totalRewardsData, setTotalRewardsData] = useState([]);
-  const [transactionsData, setTransactionsData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        // Fetch the JSON file from the public folder
-        const responseData = await fetch("/api.json");
+    const [monthlyRewardsData, setMonthlyRewardsData] = useState([]);
+    const [totalRewardsData, setTotalRewardsData] = useState([]);
+    const [transactionsData, setTransactionsData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-        if (!responseData.ok) {
-          throw new Error("Failed to fetch data");
-        }
+    useEffect(() => {
+        const shopData = async () => {
+            setIsLoading(true);
+            try {
+                const responseData = await fetchData();
+                setTransactionsData(responseData)
 
-        const response = await responseData.json();
+                const monthlyRewardData = await processData()
+                const threeMonthData = calculateLastThreeMonthData(monthlyRewardData)
+                setMonthlyRewardsData(threeMonthData);
 
-        const sortedTransaction = response.sort(
-          (a, b) => new Date(a.purchaseDate) - new Date(b.purchaseDate),
-        );
-        setTransactionsData(sortedTransaction);
+                const totalRewardData = await processTotalRewards()
+                setTotalRewardsData(totalRewardData)
 
-        //Finding Monthly Rewards Data according to month wise
-        const monthlyRewardsData = sortedTransaction.reduce((acc, val) => {
-          const customerKey = `${val.customerId}_${new Date(val.purchaseDate).getMonth()}_${new Date(val.purchaseDate).getFullYear()}`;
-          if (acc[customerKey]) {
-            acc[customerKey].totalPrice += val.price;
-          } else {
-            acc[customerKey] = {
-              customerName: val.customerName,
-              customerId: val.customerId,
-              totalPrice: val.price,
-              transactionId: val.transactionId,
-              purchaseMonth: monthNames[new Date(val.purchaseDate).getMonth()],
-              purchaseYear: new Date(val.purchaseDate).getFullYear(),
-              date: val.purchaseDate,
-            };
-          }
-          return acc;
-        }, {});
-        const threeMonthData = LastThreeMonthData(
-          Object.values(monthlyRewardsData),
-        );
-        setRewardsData(threeMonthData);
+            } catch (error) {
+                setError("Unable to fetch data,Kindly Wait!" + error.message);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        shopData();
+    }, []);
 
-        //Finding Total Price/Rewards According to and customer_id
-        const totalRewards = sortedTransaction.reduce((acc, val) => {
-          if (acc[val.customerId]) {
-            acc[val.customerId].totalPrice += val.price;
-          } else {
-            acc[val.customerId] = {
-              customerName: val.customerName,
-              customerId: val.customerId,
-              totalPrice: val.price,
-              transactionId: val.transactionId,
-            };
-          }
-          return acc;
-        }, {});
-        setTotalRewardsData(Object.values(totalRewards));
-      } catch (error) {
-        //Handle Error
-        setError("Unable to fetch data,Kindly Wait!");
-      } finally {
-        //Set isLoding to false when data is loaded
-        setIsLoading(false);
-      }
-    };
-    fetchData(); // Call the async function
-  }, []); // Empty dependency array means this runs only once, similar to componentDidMount
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>{error}</div>;
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
-
-  return (
-    <div className="App">
-      <TransactionDetails data={transactionsData} />
-      <RetailerShop data={rewardsData} />
-      <TotalReward data={totalRewardsData} />
-    </div>
-  );
+    return (
+        <div className="App">
+            <TransactionDetails data={transactionsData} />
+            <MonthlyReward data={monthlyRewardsData} />
+            <TotalReward data={totalRewardsData} />
+        </div>
+    );
 }
 
-export default Home;
+export default Home

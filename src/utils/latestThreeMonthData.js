@@ -1,4 +1,4 @@
-export const LastThreeMonthData = (data) => {
+export const calculateLastThreeMonthData = (data) => {
     const today = new Date();
     // Get the date for 3 months ago
     const threeMonthsAgo = new Date(today);

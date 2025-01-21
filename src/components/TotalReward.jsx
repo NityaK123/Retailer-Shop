@@ -35,7 +35,13 @@ const TotalReward = ({ data }) => {
 };
 
 TotalReward.propTypes = {
-  data : PropTypes.array
-}
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        customerId: PropTypes.string.isRequired,  
+        customerName: PropTypes.string.isRequired, 
+        totalPrice: PropTypes.number.isRequired, 
+      })
+    ).isRequired,
+  };
 
 export default TotalReward;

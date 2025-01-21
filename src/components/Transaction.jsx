@@ -41,7 +41,15 @@ const TransactionDetails = ({ data }) => {
 };
 
 TransactionDetails.propTypes = {
-  data : PropTypes.array
-}
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        transactionId: PropTypes.string.isRequired, 
+        customerName: PropTypes.string.isRequired,   
+        purchaseDate: PropTypes.string.isRequired,   
+        productPurchased: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,  
+      })
+    ).isRequired, // data is required and must be an array of objects that match the shape
+  };
 
 export default TransactionDetails;

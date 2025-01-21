@@ -3,7 +3,7 @@ import Table from "react-bootstrap/Table";
 import { RewardPoint } from "../utils/rewardPoints";
 import PropTypes from 'prop-types'
 
-const RetailerShop = ({ data }) => {
+const MonthlyReward = ({ data }) => {
   return (
     <div id="table">
       <h1>User Monthly Rewards</h1>
@@ -38,8 +38,19 @@ const RetailerShop = ({ data }) => {
   );
 };
 
-RetailerShop.propTypes = {
-  data : PropTypes.array
-}
+MonthlyReward.propTypes = {
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        customerId: PropTypes.string.isRequired, 
+        customerName: PropTypes.string.isRequired,
+        purchaseMonth: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+        ]).isRequired, // Month can be either a string or number
+        purchaseYear: PropTypes.number.isRequired, // Year should be a number
+        totalPrice: PropTypes.number.isRequired, 
+      })
+    )
+  };
 
-export default RetailerShop;
+export default MonthlyReward;
