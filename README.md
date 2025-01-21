@@ -66,10 +66,11 @@ src/
 
 
 ![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/monthlyRewardsTableOutput.png) 
-
-![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/testCaseResult.png) 
  
 ![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/totalRewardsTableOutput.png) 
 
 ![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/transactionTableOutput.png)
+
+![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/testCaseResult.png) 
+
 
