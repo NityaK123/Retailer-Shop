@@ -61,6 +61,7 @@ src/
 |
 |-- App.js
 |-- index.js
+|-- logger.js
 
 
 ![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/transactionTableOutput.png)
