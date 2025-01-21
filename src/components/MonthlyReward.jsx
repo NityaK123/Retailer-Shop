@@ -28,7 +28,7 @@ const MonthlyReward = ({ data }) => {
                 <td>{val.customerName}</td>
                 <td>{val.purchaseMonth}</td>
                 <td>{val.purchaseYear}</td>
-                <td>{rewardsPoint}</td>
+                <td id="rewardPoints">{rewardsPoint}</td>
               </tr>
             );
           })}

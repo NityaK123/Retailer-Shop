@@ -24,7 +24,7 @@ const TotalReward = ({ data }) => {
                 <td>{index + 1}</td>
                 <td>{val.customerId}</td>
                 <td>{val.customerName}</td>
-                <td>{rewardsPoint}</td>
+                <td id="rewardPoints">{rewardsPoint}</td>
               </tr>
             );
           })}

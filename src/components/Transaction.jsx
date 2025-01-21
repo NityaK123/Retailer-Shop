@@ -30,7 +30,7 @@ const TransactionDetails = ({ data }) => {
                 <td>{val.purchaseDate}</td>
                 <td>{val.productPurchased}</td>
                 <td>{val.price}</td>
-                <td>{rewardsPoint}</td>
+                <td id="rewardPoints">{rewardsPoint}</td>
               </tr>
             );
           })}
