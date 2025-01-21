@@ -1,3 +1,5 @@
+import logger from '../logger';
+
 export const fetchData = async () => {
     try {
         // Fetch the JSON file from the public folder
@@ -15,6 +17,6 @@ export const fetchData = async () => {
         );
         return sortedTransaction;
     } catch (error) {
-        throw new Error("Unable to fetch data: " + error.message);
+        logger.error(error.message);
     }
 };

@@ -6,6 +6,7 @@ import { calculateLastThreeMonthData } from "../utils/latestThreeMonthData";
 import { fetchData } from "../services/fetchData";
 import processData from '../services/calculateMonthlyRewards'
 import processTotalRewards from '../services/calculateTotalRewards'
+import logger from "../logger";
 
 function Home() {
 
@@ -30,6 +31,7 @@ function Home() {
                 setTotalRewardsData(totalRewardData)
 
             } catch (error) {
+                logger.error(error.message);
                 setError("Unable to fetch data,Kindly Wait!" + error.message);
             } finally {
                 setIsLoading(false);

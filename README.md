@@ -2,7 +2,7 @@
 This is retailer shop in which customer buy the product and shop give points and rewards.
 
 Steps:
-Create a Folder md 1383946 then cd 1383946.
+Create a Folder.
 Execute npx create-react-app retailershop.
 Create a component folder and Make a Transaction.jsx , MonthlyReward.jsx, TotalReward.jsx. 
 Make utils Folder and in this folder make a api.js
@@ -63,13 +63,11 @@ src/
 |-- index.js
 
 
-
+![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/transactionTableOutput.png)
 
 ![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/monthlyRewardsTableOutput.png) 
  
 ![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/totalRewardsTableOutput.png) 
-
-![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/transactionTableOutput.png)
 
 ![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/testCaseResult.png) 
 

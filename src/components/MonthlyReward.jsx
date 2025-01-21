@@ -19,7 +19,7 @@ const MonthlyReward = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data?.map((val, index) => {
+          {data.map((val, index) => {
             let rewardsPoint = RewardPoint(val.totalPrice);
             return (
               <tr key={index}>

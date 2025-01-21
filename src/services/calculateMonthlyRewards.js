@@ -1,5 +1,6 @@
 import { fetchData } from './fetchData';
 import { monthNames } from '../constant/monthNames';
+import logger from '../logger';
 
 async function processData() {
   try {
@@ -31,7 +32,7 @@ async function processData() {
     // Convert the accumulator object to an array
     return Object.values(monthlyRewardsData);
   } catch (error) {
-    throw new Error("Unable to fetch data: " + error.message);
+    logger.error(error.message);
   }
 }
 

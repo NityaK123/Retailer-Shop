@@ -1,4 +1,6 @@
 import { fetchData } from './fetchData';
+import logger from '../logger';
+
 
 async function processTotalRewards() {
   try {
@@ -25,7 +27,7 @@ async function processTotalRewards() {
     // Convert the accumulator to an array at the end
     return Object.values(totalRewards);
   } catch (error) {
-    throw new Error("Unable to fetch data: " + error.message);
+    logger.error(error.message);
   }
 }
 
