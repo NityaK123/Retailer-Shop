@@ -64,10 +64,12 @@ src/
 
 
 
-![alt text](image.png)
 
-![alt text](image-1.png)
+![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/monthlyRewardsTableOutput.png) 
 
-![alt text](image-2.png)
+![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/testCaseResult.png) 
+ 
+![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/totalRewardsTableOutput.png) 
 
-![alt text](image-3.png)
+![alt text](https://github.com/NityaK123/Retailer-Shop_updated/blob/main/public/assets/transactionTableOutput.png)
+
