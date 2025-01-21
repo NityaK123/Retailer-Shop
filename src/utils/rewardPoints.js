@@ -5,6 +5,5 @@ export const RewardPoint = (totalPrice) => {
       : totalPrice > 50
         ? totalPrice - 50
         : 0;
-  rewardsPoint = Math.floor(rewardsPoint);
   return rewardsPoint;
 };

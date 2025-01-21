@@ -3,9 +3,9 @@ import { RewardPoint } from "../../utils/rewardPoints";
 //Testing of RewardPoint function
 describe("RewardPoint function", () => {
   test("should calculate rewards points correctly when totalPrice > 100", () => {
-    const result = RewardPoint(599.99);
-    // (599.99 - 100) * 2 + 50 = 499.99*2 + 50 = 1049
-    expect(result).toBe(1049);
+    const result = RewardPoint(599);
+    // (599 - 100) * 2 + 50 = 499 * 2 + 50 = 1048
+    expect(result).toBe(1048);
   });
 
   test("should calculate rewards points correctly when totalPrice is between 51 and 100", () => {
