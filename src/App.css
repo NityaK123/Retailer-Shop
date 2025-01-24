@@ -25,3 +25,38 @@
 #table h1{
   text-align: left;
 }
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 80%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.nav-tabs .nav-link {
+  background-color: #f1f1f1; 
+  color: #555; /* Inactive tabs text color */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+/* Active tab styling */
+.nav-tabs .nav-link.active {
+  background-color: #007bff; /* Active tab background color */
+  color: white; /* Active tab text color */
+  border-color: #007bff; /* Optional: border color for the active tab */
+}
+
+/* Optional: Styling for hover effect */
+.nav-tabs .nav-link:hover {
+  background-color: #88c0e0; /* Background on hover for inactive tabs */
+}

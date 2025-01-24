@@ -10,7 +10,7 @@ import logger from "../logger";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
-function Home(){
+function Home() {
   const [monthlyRewardsData, setMonthlyRewardsData] = useState([]);
   const [totalRewardsData, setTotalRewardsData] = useState([]);
   const [transactionsData, setTransactionsData] = useState([]);
@@ -46,23 +46,27 @@ function Home(){
   return (
     <div className="App">
       <h1>Customer Transaction and Rewards Point</h1>
-      <Tabs
-        defaultActiveKey="allTransaction"
-        id="justify-tab-example"
-        variant="tabs"
-        className="mb-3"
-        justify
-      >
-        <Tab eventKey="allTransaction" title="All Transaction">
-          <TransactionDetails data={transactionsData} />
-        </Tab>
-        <Tab eventKey="monthlyData" title="Monthly Rewards(Last three Month)">
-          <MonthlyReward data={monthlyRewardsData} />
-        </Tab>
-        <Tab eventKey="totalRewards" title="Total Rewards">
-          <TotalReward data={totalRewardsData} />
-        </Tab>
-      </Tabs>
+      <div className="card-container">
+        <div className="card">
+          <Tabs
+            defaultActiveKey="allTransaction"
+            id="justify-tab-example"
+            variant="tabs"
+            className="mb-3"
+            justify
+          >
+            <Tab eventKey="allTransaction" title="All Transaction">
+              <TransactionDetails data={transactionsData} />
+            </Tab>
+            <Tab eventKey="monthlyData" title="Monthly Rewards(Last three Month)">
+              <MonthlyReward data={monthlyRewardsData} />
+            </Tab>
+            <Tab eventKey="totalRewards" title="Total Rewards">
+              <TotalReward data={totalRewardsData} />
+            </Tab>
+          </Tabs>
+        </div>
+      </div>
     </div>
   );
 }
