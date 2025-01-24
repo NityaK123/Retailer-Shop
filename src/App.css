@@ -12,13 +12,14 @@
   text-align: right;
 }
 
-thead tr th{
+#tr th{
   background-color: rgb(95, 146, 0);
 }
 
 .App h1{
    text-align: center;
    color:blueviolet;
+   background-color: aliceblue;
 }
 
 #table h1{

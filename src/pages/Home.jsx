@@ -49,13 +49,14 @@ function Home(){
       <Tabs
         defaultActiveKey="allTransaction"
         id="justify-tab-example"
+        variant="tabs"
         className="mb-3"
         justify
       >
         <Tab eventKey="allTransaction" title="All Transaction">
           <TransactionDetails data={transactionsData} />
         </Tab>
-        <Tab eventKey="monthlyData" title="Last Three Month Rewards">
+        <Tab eventKey="monthlyData" title="Monthly Rewards(Last three Month)">
           <MonthlyReward data={monthlyRewardsData} />
         </Tab>
         <Tab eventKey="totalRewards" title="Total Rewards">

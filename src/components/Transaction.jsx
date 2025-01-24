@@ -9,7 +9,7 @@ const TransactionDetails = ({ data }) => {
       <h1>Transaction Details</h1>
       <Table striped bordered hover>
         <thead>
-          <tr>
+          <tr id="tr">
             <th>S. NO.</th>
             <th>Transaction Id</th>
             <th>Customer Name</th>

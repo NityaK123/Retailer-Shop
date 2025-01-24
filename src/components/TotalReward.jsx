@@ -9,7 +9,7 @@ const TotalReward = ({ data }) => {
       <h1>Total Rewards</h1>
       <Table striped bordered hover>
         <thead>
-          <tr>
+          <tr id="tr">
             <th>S. NO.</th>
             <th>Customer Id</th>
             <th>Customer Name</th>
