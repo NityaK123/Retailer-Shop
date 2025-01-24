@@ -11,3 +11,16 @@
 #rewardPoints{
   text-align: right;
 }
+
+thead tr th{
+  background-color: rgb(95, 146, 0);
+}
+
+.App h1{
+   text-align: center;
+   color:blueviolet;
+}
+
+#table h1{
+  text-align: left;
+}

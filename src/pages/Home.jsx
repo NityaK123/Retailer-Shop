@@ -7,8 +7,10 @@ import { fetchData } from "../services/fetchData";
 import processData from "../services/calculateMonthlyRewards";
 import processTotalRewards from "../services/calculateTotalRewards";
 import logger from "../logger";
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
-function Home() {
+function Home(){
   const [monthlyRewardsData, setMonthlyRewardsData] = useState([]);
   const [totalRewardsData, setTotalRewardsData] = useState([]);
   const [transactionsData, setTransactionsData] = useState([]);
@@ -36,16 +38,30 @@ function Home() {
       }
     };
     shopData();
-  }, []);
+  }, [])
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
   return (
     <div className="App">
-      <TransactionDetails data={transactionsData} />
-      <MonthlyReward data={monthlyRewardsData} />
-      <TotalReward data={totalRewardsData} />
+      <h1>Customer Transaction and Rewards Point</h1>
+      <Tabs
+        defaultActiveKey="allTransaction"
+        id="justify-tab-example"
+        className="mb-3"
+        justify
+      >
+        <Tab eventKey="allTransaction" title="All Transaction">
+          <TransactionDetails data={transactionsData} />
+        </Tab>
+        <Tab eventKey="monthlyData" title="Last Three Month Rewards">
+          <MonthlyReward data={monthlyRewardsData} />
+        </Tab>
+        <Tab eventKey="totalRewards" title="Total Rewards">
+          <TotalReward data={totalRewardsData} />
+        </Tab>
+      </Tabs>
     </div>
   );
 }

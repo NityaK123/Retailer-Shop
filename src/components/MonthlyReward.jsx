@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 const MonthlyReward = ({ data }) => {
   return (
     <div id="table">
-      <h1>User Monthly Rewards</h1>
+      <h1>Monthly Rewards</h1>
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
