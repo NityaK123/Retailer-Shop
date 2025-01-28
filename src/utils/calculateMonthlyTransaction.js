@@ -1,4 +1,4 @@
-import { monthNames } from "../constant/monthNames";
+import { monthNames } from "./constants";
 import logger from "../logger";
 import { calculateLastThreeMonthData } from "./rewardsHelper";
 
@@ -27,7 +27,7 @@ function serializeTransactions(transactionData) {
       return acc;
     }, {});
 
-    // Convert the accumulator object to an array with calculating lastThreeMonthData
+    // Convert the accumulator object to an array and calculating lastThreeMonthData
     const lastThreeMonthData = calculateLastThreeMonthData(Object.values(monthlyRewardsData))
     return lastThreeMonthData;
   } catch (error) {

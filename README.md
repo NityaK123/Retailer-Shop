@@ -37,8 +37,6 @@ src/
 |   |-- TotalReward.jsx
 |   |-- Transactions.js
 |
-|--constants/
-|  |-- monthNames.js
 |
 |--pages/
 |   |--Home.jsx
@@ -57,6 +55,7 @@ src/
 |       |--getTransaction.js
 |   |--calculateMonthlyTransaction.js
 |   |--calculateTotalRewards.js
+|   |--constants.js
 |   |--rewardsHelper.js
 |
 |-- App.js
