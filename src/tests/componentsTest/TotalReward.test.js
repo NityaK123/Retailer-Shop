@@ -11,7 +11,7 @@ describe("TotalReward Component", () => {
         customerName: "John Doe",
         purchaseDate: "2025-01-05",
         productPurchased: "Smartphone",
-        price: 599.99,
+        totalPrice: 599.99,
       },
       {
         transactionId: 102,
@@ -19,7 +19,7 @@ describe("TotalReward Component", () => {
         customerName: "John Doe",
         purchaseDate: "2025-01-20",
         productPurchased: "Laptop",
-        price: 1200.0,
+        totalPrice: 1200.0,
       },
     ];
 

@@ -2,7 +2,7 @@ import logger from "../logger";
 
 export const calculateRewardPoints = (totalPrice) => {
   // First, check if totalPrice is a valid number
-  if (totalPrice && isNaN(totalPrice)) {
+  if (isNaN(totalPrice)) {
     logger.error(`Total Price is not a valid number: ${totalPrice}`);
     return 0; // Return 0 or another default value when the price is invalid
   }
