@@ -1,4 +1,4 @@
-import { calculateRewardPoints } from "../../utils/rewardPoints";
+import { calculateRewardPoints } from "../../utils/rewardsHelper";
 
 //Testing of RewardPoint function
 describe("RewardPoint function", () => {

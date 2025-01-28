@@ -1,6 +1,6 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
-import { calculateRewardPoints } from "../utils/rewardPoints";
+import { calculateRewardPoints } from "../utils/rewardsHelper";
 import PropTypes from "prop-types";
 
 const TotalReward = ({data}) => {

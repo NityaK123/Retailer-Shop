@@ -1,6 +1,6 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
-import { calculateRewardPoints } from "../utils/rewardPoints";
+import { calculateRewardPoints } from "../utils/rewardsHelper";
 import PropTypes from "prop-types";
 
 const TransactionDetails = ({ data }) => { 
@@ -21,7 +21,6 @@ const TransactionDetails = ({ data }) => {
         </thead>
         <tbody>
           {data.map((val) => {
-            // Memoize the reward points calculation only for each price
             const rewardsPoint = calculateRewardPoints(val.price)
             return (
               <tr key={val.transactionId}>

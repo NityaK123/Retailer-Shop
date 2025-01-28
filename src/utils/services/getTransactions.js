@@ -1,6 +1,6 @@
-import logger from "../logger";
+import logger from "../../logger";
 
-export const fetchData = async () => {
+export const getTransaction = async () => {
   try {
     // Fetch the JSON file from the public folder
     const responseData = await fetch("/data.json");

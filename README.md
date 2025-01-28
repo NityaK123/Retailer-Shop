@@ -43,10 +43,6 @@ src/
 |--pages/
 |   |--Home.jsx
 |
-|--services/
-|  |--calculateMonthlyRewards.js
-|  |--calculateTotalRewards.js
-|  |--fetchData.js
 |
 |--tests
 |   |--componentsTest
@@ -57,7 +53,11 @@ src/
 |        |--RewardPoint.test.js
 |
 |-- utils/
-|   |--rewardPoints.js 
+|   |--services
+|       |--getTransaction.js
+|   |--calculateMonthlyTransaction.js
+|   |--calculateTotalRewards.js
+|   |--rewardsHelper.js
 |
 |-- App.js
 |-- index.js

@@ -1,7 +1,8 @@
 import { monthNames } from "../constant/monthNames";
 import logger from "../logger";
+import { calculateLastThreeMonthData } from "./rewardsHelper";
 
-function processData(transactionData) {
+function serializeTransactions(transactionData) {
   try {
 
     // Calculate monthly rewards data
@@ -26,11 +27,13 @@ function processData(transactionData) {
       return acc;
     }, {});
 
-    // Convert the accumulator object to an array
-    return Object.values(monthlyRewardsData);
+    // Convert the accumulator object to an array with calculating lastThreeMonthData
+    const lastThreeMonthData = calculateLastThreeMonthData(Object.values(monthlyRewardsData))
+    return lastThreeMonthData;
   } catch (error) {
     logger.error(error.message);
+    throw error
   }
 }
 
-export default processData;
+export default serializeTransactions;

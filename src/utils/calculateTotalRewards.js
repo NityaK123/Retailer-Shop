@@ -1,6 +1,6 @@
 import logger from "../logger";
 
-function processTotalRewards(transactionData) {
+function serializeTotalRewards(transactionData) {
   try {
     
     // Calculate total rewards data
@@ -28,4 +28,4 @@ function processTotalRewards(transactionData) {
   }
 }
 
-export default processTotalRewards;
+export default serializeTotalRewards;

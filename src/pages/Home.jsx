@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import MonthlyReward from "../components/MonthlyReward";
 import TransactionDetails from "../components/Transaction";
 import TotalReward from "../components/TotalReward";
-import { calculateLastThreeMonthData } from "../utils/latestThreeMonthData";
-import { fetchData } from "../utils/fetchData";
-import processData from "../utils/calculateMonthlyRewards";
-import processTotalRewards from "../utils/calculateTotalRewards";
+import { getTransaction } from "../utils/services/getTransactions";
+import serializeTransactions from "../utils/calculateMonthlyTransaction";
+import serializeTotalRewards from "../utils/calculateTotalRewards";
 import logger from "../logger";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
@@ -21,15 +20,14 @@ function Home() {
     const shopData = async () => {
       setIsLoading(true);
       try {
-        const responseData = await fetchData();
+        const responseData = await getTransaction();
         setTransactionsData(responseData);
 
-        const monthlyRewardData = processData(responseData);
-        const lastThreeMonthData = calculateLastThreeMonthData(monthlyRewardData)
-        setMonthlyRewardsData(lastThreeMonthData);
+        const lastThreeMonthRewardsData = serializeTransactions(responseData);
+        setMonthlyRewardsData(lastThreeMonthRewardsData);
 
-        const totalRewardData =  processTotalRewards(responseData);
-        setTotalRewardsData(totalRewardData);
+        const totalRewardsData =  serializeTotalRewards(responseData);
+        setTotalRewardsData(totalRewardsData);
 
       } catch (error) {
         logger.error(error.message);
