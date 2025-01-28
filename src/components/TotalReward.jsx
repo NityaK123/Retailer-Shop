@@ -1,6 +1,6 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
-import { RewardPoint } from "../utils/rewardPoints";
+import { calculateRewardPoints } from "../utils/rewardPoints";
 import PropTypes from "prop-types";
 
 const TotalReward = ({ data }) => {
@@ -18,7 +18,7 @@ const TotalReward = ({ data }) => {
         </thead>
         <tbody>
           {data.map((val, index) => {
-            let rewardsPoint = RewardPoint(Math.floor(val.totalPrice));
+            let rewardsPoint = calculateRewardPoints(val.totalPrice);
             return (
               <tr key={index}>
                 <td>{index + 1}</td>
