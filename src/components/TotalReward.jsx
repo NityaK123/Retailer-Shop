@@ -1,16 +1,9 @@
-import React,{useMemo} from "react";
+import React from "react";
 import Table from "react-bootstrap/Table";
 import { calculateRewardPoints } from "../utils/rewardPoints";
 import PropTypes from "prop-types";
 
-const TotalReward = ({ data }) => {
-
-  const totalRewardPointsData = useMemo(() => {
-      return data.map((val) => ({
-        ...val,
-        rewardsPoint: calculateRewardPoints(val.totalPrice),
-      }));
-    }, [data]);
+const TotalReward = ({data}) => {
 
   return (
     <div id="table">
@@ -24,12 +17,13 @@ const TotalReward = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {totalRewardPointsData.map((val, index) => {
+          {data.map((val) => {
+            const rewardsPoint = calculateRewardPoints(val.totalPrice)
             return (
-              <tr key={index}>
+              <tr key={val.transactionId}>
                 <td>{val.customerId}</td>
                 <td>{val.customerName}</td>
-                <td id="rewardPoints">{val.rewardsPoint}</td>
+                <td id="rewardPoints">{rewardsPoint}</td>
               </tr>
             );
           })}

@@ -1,11 +1,8 @@
-import { fetchData } from "./fetchData";
 import logger from "../logger";
 
-async function processTotalRewards() {
+function processTotalRewards(transactionData) {
   try {
-    // Fetch transaction data
-    const transactionData = await fetchData();
-
+    
     // Calculate total rewards data
     const totalRewards = transactionData.reduce((acc, val) => {
       // If the customerId already exists, add the price to the totalPrice
@@ -27,6 +24,7 @@ async function processTotalRewards() {
     return Object.values(totalRewards);
   } catch (error) {
     logger.error(error.message);
+    throw error
   }
 }
 

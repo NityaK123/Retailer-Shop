@@ -1,11 +1,8 @@
-import { fetchData } from "./fetchData";
 import { monthNames } from "../constant/monthNames";
 import logger from "../logger";
 
-async function processData() {
+function processData(transactionData) {
   try {
-    // Fetch transaction data
-    const transactionData = await fetchData();
 
     // Calculate monthly rewards data
     const monthlyRewardsData = transactionData.reduce((acc, val) => {

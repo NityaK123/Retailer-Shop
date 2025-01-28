@@ -1,17 +1,9 @@
-import React,{useMemo} from "react";
+import React from "react";
 import Table from "react-bootstrap/Table";
 import { calculateRewardPoints } from "../utils/rewardPoints";
 import PropTypes from "prop-types";
 
 const TransactionDetails = ({ data }) => { 
-
-   const totalTransaction = useMemo(() => {
-        return data.map((val) => ({
-          ...val,
-          rewardsPoint: calculateRewardPoints(val.price),
-        }));
-      }, [data]);
-  
 
   return (
     <div id="table">
@@ -28,15 +20,17 @@ const TransactionDetails = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {totalTransaction.map((val, index) => {
+          {data.map((val) => {
+            // Memoize the reward points calculation only for each price
+            const rewardsPoint = calculateRewardPoints(val.price)
             return (
-              <tr key={index}>
+              <tr key={val.transactionId}>
                 <td>{val.transactionId}</td>
                 <td>{val.customerName}</td>
                 <td>{val.purchaseDate}</td>
                 <td>{val.productPurchased}</td>
                 <td>{val.price}</td>
-                <td id="rewardPoints">{val.rewardsPoint}</td>
+                <td id="rewardPoints">{rewardsPoint}</td>
               </tr>
             );
           })}
@@ -54,7 +48,7 @@ TransactionDetails.propTypes = {
       purchaseDate: PropTypes.string.isRequired,
       productPurchased: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-    }),
+    })
   ).isRequired, // data is required and must be an array of objects that match the shape
 };
 

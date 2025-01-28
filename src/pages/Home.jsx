@@ -3,9 +3,9 @@ import MonthlyReward from "../components/MonthlyReward";
 import TransactionDetails from "../components/Transaction";
 import TotalReward from "../components/TotalReward";
 import { calculateLastThreeMonthData } from "../utils/latestThreeMonthData";
-import { fetchData } from "../services/fetchData";
-import processData from "../services/calculateMonthlyRewards";
-import processTotalRewards from "../services/calculateTotalRewards";
+import { fetchData } from "../utils/fetchData";
+import processData from "../utils/calculateMonthlyRewards";
+import processTotalRewards from "../utils/calculateTotalRewards";
 import logger from "../logger";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
@@ -24,12 +24,13 @@ function Home() {
         const responseData = await fetchData();
         setTransactionsData(responseData);
 
-        const monthlyRewardData = await processData();
-        const threeMonthData = calculateLastThreeMonthData(monthlyRewardData);
-        setMonthlyRewardsData(threeMonthData);
+        const monthlyRewardData = processData(responseData);
+        const lastThreeMonthData = calculateLastThreeMonthData(monthlyRewardData)
+        setMonthlyRewardsData(lastThreeMonthData);
 
-        const totalRewardData = await processTotalRewards();
+        const totalRewardData =  processTotalRewards(responseData);
         setTotalRewardsData(totalRewardData);
+
       } catch (error) {
         logger.error(error.message);
         setError("Unable to fetch data,Kindly Wait!" + error.message);

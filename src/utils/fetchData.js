@@ -18,5 +18,6 @@ export const fetchData = async () => {
     return sortedTransaction;
   } catch (error) {
     logger.error(error.message);
+    throw error
   }
 };
