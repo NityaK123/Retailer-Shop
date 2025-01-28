@@ -15,8 +15,8 @@ describe("TotalReward Component", () => {
       },
       {
         transactionId: 102,
-        customerId: 1000,
-        customerName: "John Doe",
+        customerId: 1001,
+        customerName: "Jane Smith",
         purchaseDate: "2025-01-20",
         productPurchased: "Laptop",
         totalPrice: 1200.0,
@@ -29,9 +29,6 @@ describe("TotalReward Component", () => {
     expect(screen.getByText("Total Rewards")).toBeInTheDocument();
 
     // Check table headers using getByRole for 'columnheader' role
-    expect(
-      screen.getByRole("columnheader", { name: /S. NO./i }),
-    ).toBeInTheDocument();
     expect(
       screen.getByRole("columnheader", { name: /Customer Id/i }),
     ).toBeInTheDocument();
@@ -49,13 +46,13 @@ describe("TotalReward Component", () => {
 
     // Check data for the first row
     const firstRowCells = within(rows[1]).getAllByRole("cell");
-    expect(firstRowCells[1]).toHaveTextContent("1000"); // Customer Id
-    expect(firstRowCells[2]).toHaveTextContent("John Doe"); // Customer Name
+    expect(firstRowCells[0]).toHaveTextContent("1000"); // Customer Id
+    expect(firstRowCells[1]).toHaveTextContent("John Doe"); // Customer Name
 
     // Check data for the second row
     const secondRowCells = within(rows[2]).getAllByRole("cell");
-    expect(secondRowCells[1]).toHaveTextContent("1000"); // Customer Id
-    expect(secondRowCells[2]).toHaveTextContent("John Doe"); // Customer Name
+    expect(secondRowCells[0]).toHaveTextContent("1001"); // Customer Id
+    expect(secondRowCells[1]).toHaveTextContent("Jane Smith"); // Customer Name
   });
 
   it("does not render any rows if no data is passed", () => {

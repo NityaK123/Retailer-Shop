@@ -1,16 +1,25 @@
-import React from "react";
+import React,{useMemo} from "react";
 import Table from "react-bootstrap/Table";
 import { calculateRewardPoints } from "../utils/rewardPoints";
 import PropTypes from "prop-types";
 
 const MonthlyReward = ({ data }) => {
+
+
+  const monthlyRewardPointsData = useMemo(() => {
+    return data.map((val) => ({
+      ...val,
+      rewardsPoint: calculateRewardPoints(val.totalPrice),
+    }));
+  }, [data]);
+
+
   return (
     <div id="table">
       <h1>Monthly Rewards</h1>
       <Table striped bordered hover size="sm">
         <thead>
           <tr id="tr">
-            <th>S. NO.</th>
             <th>Customer Id</th>
             <th>Name</th>
             <th>Month</th>
@@ -19,16 +28,14 @@ const MonthlyReward = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((val, index) => {
-            let rewardsPoint = calculateRewardPoints(val.totalPrice);
+          {monthlyRewardPointsData.map((val, index) => {
             return (
               <tr key={index}>
-                <td>{index + 1}</td>
                 <td>{val.customerId}</td>
                 <td>{val.customerName}</td>
                 <td>{val.purchaseMonth}</td>
                 <td>{val.purchaseYear}</td>
-                <td id="rewardPoints">{rewardsPoint}</td>
+                <td id="rewardPoints">{val.rewardsPoint}</td>
               </tr>
             );
           })}

@@ -26,9 +26,6 @@ describe("RetailerShop", () => {
 
     // Check if the table headers are rendered correctly
     expect(
-      screen.getByRole("columnheader", { name: /S\. NO\./i }),
-    ).toBeInTheDocument();
-    expect(
       screen.getByRole("columnheader", { name: /Customer Id/i }),
     ).toBeInTheDocument();
     expect(
