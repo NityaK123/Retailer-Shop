@@ -14,7 +14,7 @@ export const getTransaction = async () => {
     // Sort the transactions by purchase date
     const sortedTransaction = response.sort(
       (a, b) => new Date(a.purchaseDate) - new Date(b.purchaseDate),
-    );
+    ); 
     return sortedTransaction;
   } catch (error) {
     logger.error(error.message);

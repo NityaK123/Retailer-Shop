@@ -7,14 +7,16 @@ export const calculateRewardPoints = (totalPrice) => {
     return 0; // Return 0 or another default value when the price is invalid
   }
   // If totalPrice is valid, proceed with the calculation
-  totalPrice = Math.floor(totalPrice);
+  const roundedPrice = Math.floor(totalPrice);
 
-  let rewardsPoint =
-    totalPrice > 100
-      ? (totalPrice - 100) * 2 + 50
-      : totalPrice > 50
-      ? totalPrice - 50
-      : 0;
+  let rewardsPoint = 0;
+
+  rewardsPoint =
+    roundedPrice > 100
+      ? (roundedPrice - 100) * 2 + 50
+      : roundedPrice > 50
+        ? roundedPrice - 50
+        : 0;
 
   return rewardsPoint;
 };

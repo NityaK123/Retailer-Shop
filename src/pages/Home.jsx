@@ -31,7 +31,7 @@ function Home() {
 
       } catch (error) {
         logger.error(error.message);
-        setError("Unable to fetch data,Kindly Wait!" + error.message);
+        setError(`Unable to fetch data,Kindly Wait!" ${error.message}`);
       } finally {
         setIsLoading(false);
       }
