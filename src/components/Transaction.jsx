@@ -47,6 +47,7 @@ TransactionDetails.propTypes = {
       purchaseDate: PropTypes.string.isRequired,
       productPurchased: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
+      rewardsPoint: PropTypes.number.isRequired
     })
   ).isRequired, // data is required and must be an array of objects that match the shape
 };

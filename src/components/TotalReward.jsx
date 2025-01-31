@@ -17,7 +17,6 @@ const TotalReward = ({data}) => {
         </thead>
         <tbody>
           {data.map((val) => {
-            //const rewardsPoint = calculateRewardPoints(val.totalPrice)
             return (
               <tr key={val.transactionId}>
                 <td>{val.customerId}</td>
@@ -38,6 +37,7 @@ TotalReward.propTypes = {
       customerId: PropTypes.string.isRequired,
       customerName: PropTypes.string.isRequired,
       totalPrice: PropTypes.number.isRequired,
+      rewardsPoint: PropTypes.number.isRequired
     }),
   ).isRequired,
 };

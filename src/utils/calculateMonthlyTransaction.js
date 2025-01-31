@@ -5,23 +5,29 @@ import { calculateRewardPoints } from "./rewardsHelper";
 
 function serializeTransactions(transactionData) {
   try {
+    // Validate transactionData if needed
+    if (!Array.isArray(transactionData)) {
+      throw new Error('Invalid transaction data format');
+    }
 
-    // Calculate monthly rewards data
     const monthlyRewardsData = transactionData.reduce((acc, val) => {
-      // Create a new Date object once for reuse
       const purchaseDate = new Date(val.purchaseDate);
-      const customerKey = `${val.customerId}_${purchaseDate.getMonth()}_${purchaseDate.getFullYear()}`;
-      let transactionRewards = calculateRewardPoints(val.price)
-      
+      if (!purchaseDate.getTime()) {
+        throw new Error(`Invalid purchase date: ${val.purchaseDate}`);
+      }
+
+      const customerKey = `${val.customerId}-${purchaseDate.getMonth() + 1}-${purchaseDate.getFullYear()}`;
+      let transactionRewards = calculateRewardPoints(val.price);
+
       if (acc[customerKey]) {
-        acc[customerKey].rewardsPoint += transactionRewards
+        acc[customerKey].rewardsPoint += transactionRewards;
         acc[customerKey].totalPrice += val.price;
       } else {
         acc[customerKey] = {
           customerName: val.customerName,
           customerId: val.customerId,
           totalPrice: val.price,
-          rewardsPoint:transactionRewards,
+          rewardsPoint: transactionRewards,
           transactionId: val.transactionId,
           purchaseMonth: monthNames[purchaseDate.getMonth()],
           purchaseYear: purchaseDate.getFullYear(),
@@ -31,12 +37,12 @@ function serializeTransactions(transactionData) {
       return acc;
     }, {});
 
-    // Convert the accumulator object to an array and calculating lastThreeMonthData
-    const lastThreeMonthData = calculateLastThreeMonthData(Object.values(monthlyRewardsData))
+    const lastThreeMonthData = calculateLastThreeMonthData(Object.values(monthlyRewardsData));
     return lastThreeMonthData;
+
   } catch (error) {
-    logger.error(error.message);
-    throw error
+    logger.error('Error in serializeTransactions:', error);
+    throw error;
   }
 }
 

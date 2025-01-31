@@ -2,7 +2,7 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import PropTypes from "prop-types";
 
-const MonthlyReward = ({ data }) => {
+const MonthlyReward = ({ data }) => { 
 
   return (
     <div id="table">
@@ -19,7 +19,6 @@ const MonthlyReward = ({ data }) => {
         </thead>
         <tbody>
           {data.map((val) => {
-            //const rewardsPoint = calculateRewardPoints(val.totalPrice)
             return (
               <tr key={val.transactionId}>
                 <td>{val.customerId}</td>
@@ -45,8 +44,10 @@ MonthlyReward.propTypes = {
         .isRequired, // Month can be either a string or number
       purchaseYear: PropTypes.number.isRequired, // Year should be a number
       totalPrice: PropTypes.number.isRequired,
-    }),
+      rewardsPoint: PropTypes.number.isRequired, // Added rewardsPoint
+    })
   ),
 };
+
 
 export default MonthlyReward;
