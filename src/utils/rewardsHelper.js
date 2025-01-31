@@ -7,7 +7,7 @@ export const calculateRewardPoints = (totalPrice) => {
     return 0; // Return 0 or another default value when the price is invalid
   }
   // If totalPrice is valid, proceed with the calculation
-  const roundedPrice = Math.floor(totalPrice);
+  const roundedPrice = Math.floor(totalPrice); 
 
   let rewardsPoint = 0;
 

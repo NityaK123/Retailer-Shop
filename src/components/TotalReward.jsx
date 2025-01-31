@@ -1,6 +1,5 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
-import { calculateRewardPoints } from "../utils/rewardsHelper";
 import PropTypes from "prop-types";
 
 const TotalReward = ({data}) => {
@@ -18,12 +17,12 @@ const TotalReward = ({data}) => {
         </thead>
         <tbody>
           {data.map((val) => {
-            const rewardsPoint = calculateRewardPoints(val.totalPrice)
+            //const rewardsPoint = calculateRewardPoints(val.totalPrice)
             return (
               <tr key={val.transactionId}>
                 <td>{val.customerId}</td>
                 <td>{val.customerName}</td>
-                <td id="rewardPoints">{rewardsPoint}</td>
+                <td id="rewardPoints">{val.rewardsPoint}</td>
               </tr>
             );
           })}

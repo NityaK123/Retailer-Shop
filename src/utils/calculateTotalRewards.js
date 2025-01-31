@@ -1,4 +1,5 @@
 import logger from "../logger";
+import { calculateRewardPoints } from "./rewardsHelper";
 
 function serializeTotalRewards(transactionData) {
   try {
@@ -6,12 +7,16 @@ function serializeTotalRewards(transactionData) {
     // Calculate total rewards data
     const totalRewards = transactionData.reduce((acc, val) => {
       // If the customerId already exists, add the price to the totalPrice
+      let transactionRewards = calculateRewardPoints(val.price)
+      
       if (acc[val.customerId]) {
+        acc[val.customerId].rewardsPoint += transactionRewards
         acc[val.customerId].totalPrice += val.price;
       } else {
         // If it's a new customerId, initialize their data
         acc[val.customerId] = {
           customerName: val.customerName,
+          rewardsPoint:transactionRewards,
           customerId: val.customerId,
           totalPrice: val.price,
           transactionId: val.transactionId,
